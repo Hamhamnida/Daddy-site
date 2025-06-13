@@ -1,0 +1,236 @@
+/* Set the colour and the position of the background and the elements */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5; /* Light gray */
+}
+
+.container {
+  position: relative;
+}
+.valentines {
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+  animation: up 3s linear infinite;
+}
+
+/* Style the envelope and the card */
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #4a5568; /* Slate gray */
+}
+
+.envelope:before {
+  background-color: #4a5568; /* Slate gray */
+  content: "";
+  position: absolute;
+  width: 212px;
+  height: 212px;
+  transform: rotate(45deg);
+  top: -105px;
+  left: 44px;
+  border-radius: 30px 0 0 0;
+}
+
+.card {
+  position: absolute;
+  background-color: #e2e8f0; /* Light blue-gray */
+  width: 270px;
+  height: 170px;
+  top: 5px;
+  left: 15px;
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  border: 3px solid #2d3748; /* Dark gray */
+  border-style: dotted;
+  width: 240px;
+  height: 140px;
+  left: 12px;
+  top: 12px;
+}
+
+.text {
+  position: absolute;
+  font-family: 'Brush Script MT', cursive;
+  font-size: 28px;
+  text-align: center;
+  line-height: 25px;
+  top: 40px;
+  left: 90px;
+  color: #2d3748; /* Dark gray */
+}
+
+.front {
+  position: absolute;
+  border-right: 180px solid #718096; /* Gray-blue */
+  border-top: 95px solid transparent;
+  border-bottom: 100px solid transparent;
+  left: 120px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+/*coding by @coding_seru*/
+
+.front:before {
+  position: absolute;
+  content: "";
+  border-left: 300px solid #a0aec0; /* Light gray-blue */
+  border-top: 195px solid transparent;
+  left: -120px;
+  top: -95px;
+  width: 0;
+  height: 0;
+}
+
+/* Add the shadow */
+.shadow {
+  position: absolute;
+  width: 330px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 300px;
+  left: 790px;
+  animation: scale 3s linear infinite;
+  z-index: -1;
+}
+
+/* To move the envelope up and down */
+@keyframes up {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* to scale the shadow */
+@keyframes scale {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.85);
+  }
+}
+
+/* Responsive styles for tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .envelope {
+    width: 220px;
+    height: 150px;
+  }
+  .envelope:before {
+    width: 160px;
+    height: 160px;
+    top: -80px;
+    left: 30px;
+  }
+  .card {
+    width: 190px;
+    height: 120px;
+    top: -65px !important;
+    left: 15px;
+  }
+  .card:before {
+    width: 160px;
+    height: 100px;
+    left: 12px;
+    top: 10px;
+  }
+  .text {
+    font-size: 22px;
+    top: 30px;
+    left: 65px;
+    line-height: 20px;
+  }
+
+  .front {
+    border-right: 130px solid #718096;
+    border-top: 70px solid transparent;
+    border-bottom: 80px solid transparent;
+    left: 90px;
+    top: 5px;
+  }
+  .front:before {
+    border-left: 220px solid #a0aec0;
+    border-top: 150px solid transparent;
+    left: -90px;
+    top: -70px;
+  }
+  .shadow {
+    width: 240px;
+    height: 20px;
+    bottom: 170px;
+    left: 265px;
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive styles for small screens (max-width: 450px) */
+@media (max-width: 450px) {
+  .envelope {
+    width: 160px;
+    height: 110px;
+  }
+  .envelope:before {
+    width: 115px;
+    height: 115px;
+    top: -60px;
+    left: 22px;
+  }
+  .card {
+    width: 140px;
+    height: 90px;
+    top: -50px  !important;
+    left: 10px;
+  }
+  .card:before {
+    width: 115px;
+    height: 70px;
+    left: 10px;
+    top: 10px;
+  }
+  .text {
+    font-size: 16px;
+    top: 20px;
+    left: 50px;
+    line-height: 18px;
+  }
+  
+  .front {
+    border-right: 100px solid #718096;
+    border-top: 55px solid transparent;
+    border-bottom: 55px solid transparent;
+    left: 60px;
+    top: 5px;
+  }
+  .front:before {
+    border-left: 160px solid #a0aec0;
+    border-top: 110px solid transparent;
+    left: -60px;
+    top: -55px;
+  }
+  .shadow {
+    width: 180px;
+    height: 15px;
+    bottom: 190px;
+    left: 125px;
+    transform: translateX(-50%);
+  }
+}
